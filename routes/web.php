@@ -1,6 +1,7 @@
 <?php
-namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', ['uses' => 'PageController@generate']);
+Route::get('/', PageController::class);
+Route::post('/generate_qrcodes' , QrCodeGenerationController::class );
